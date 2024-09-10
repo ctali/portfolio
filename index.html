@@ -21,6 +21,11 @@
 			padding: 0;
 			box-sizing: border-box;
 		}
+		body {
+			font-family: 'Open Sans', sans-serif;
+			background-color: #f8f9fa;
+			color: #333;
+		}
 
 	header {
 		background-color: #850014;
@@ -51,7 +56,7 @@
 	}
 
 	section {
-		padding: 50px 20px;
+		padding: 20px 10px;
 		max-width: 1200px;
 		margin: 0 auto;
 	}
@@ -72,7 +77,7 @@
 
 	.content div {
 		width: 300px;
-		margin: 20px;
+		margin: 10px;
 		background-color: #fff;
 		padding: 20px;
 		border-radius: 10px;
@@ -138,11 +143,164 @@
 		text-decoration: underline;
 	}
 	
-		body {
-			font-family: 'Open Sans', sans-serif;
-			background-color: #f8f9fa;
-			color: #333;
-		}
+	/* CMS Demo Styling */
+#cms-demo {
+    padding: 50px 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.cms-dashboard {
+    background-color: #f4f4f4;
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.cms-button {
+    background-color: #4ecdc4;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin: 5px;
+    font-size: 1rem;
+}
+
+.cms-button:hover {
+    background-color: #3bbba3;
+}
+
+.cms-component {
+    margin: 20px 0;
+    padding: 20px;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.cms-component img.cms-image {
+    width: 100%;
+    height: auto;
+    margin: 10px 0;
+    border-radius: 5px;
+}
+
+.cms-template-demo,
+.cms-assets-demo {
+    margin-top: 30px;
+}
+
+
+/* Sidebar styling */
+/* Wrapper to hold sidebar and main content */
+.wrapper {
+    display: flex;
+    min-height: 100vh;
+}
+
+/* Sidebar styling */
+.sidebar {
+    width: 200px; /* Adjust width slightly to make it look cleaner */
+    background-color: #fac6c6;
+    padding: 20px;
+    position: fixed;
+    top: 80px; /* Adjusted to sit below the header */
+    left: 0;
+    height: calc(100% - 100px); /* Ensure it fits below the header */
+    overflow: auto;
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1); /* Add slight shadow for a modern look */
+}
+
+.sidebar ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.sidebar ul li {
+    margin: 15px 0;
+}
+
+.sidebar ul li a {
+    text-decoration: none;
+    color: #ae001a;
+    font-size: 1.1rem;
+    display: block;
+    padding: 10px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.sidebar ul li a:hover {
+    background-color: #ede0e1;
+}
+
+
+/* Header adjustment */
+header {
+    background-color: #850014;
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+    font-family: 'Dancing Script', cursive;
+    font-size: 3rem;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000; /* Ensure it stays above the sidebar */
+}
+
+/* Ensure sections don't go under the header */
+section {
+    padding: 20px 10px;
+    max-width: 1200px;
+    /* margin: 120px auto 0; Adjusted margin to account for fixed header */
+}
+
+/* Additional mobile styling */
+@media (max-width: 768px) {
+    .sidebar {
+        width: 100%;
+        height: auto;
+        position: relative;
+        top: 0;
+        box-shadow: none; /* Remove shadow on smaller screens */
+    }
+
+    .main-content {
+        margin-left: 0;
+    }
+}
+
+
+/* Main content styling */
+.main-content {
+    margin-left: 100px; /* Ensure the content is not hidden behind the sidebar */
+    padding: 100px;
+    flex: 1; /* Fills the remaining space */
+}
+
+/* .main-content section {
+    margin-bottom: 50px;
+} */
+
+/* Additional mobile styling */
+@media (max-width: 768px) {
+    .sidebar {
+        width: 100%;
+        height: auto;
+        position: relative;
+    }
+
+    .main-content {
+        margin-left: 0;
+    }
+}
+
+
+		
 </style>
 </head>
 <body>
@@ -151,20 +309,23 @@
 	</header>
 	
 	<div class="container">
+		<div class="wrapper">
+			<nav class="sidebar">
+				<ul>
+					<li><a href="#about">About Me</a></li>
+					<li><a href="#arts">My Arts</a></li>
+					<li><a href="#events">Events</a></li>
+					<li><a href="#tech">Tech Profile</a></li>
+				</ul>
+			</nav>		
 		
-		<nav>
-			<a href="#about">About Me</a>
-			<a href="#arts">My Arts</a>
-			<a href="#events">Events</a>
-			<a href="#tech">Tech Profile</a>
-		</nav>
+		<div class="main-content">
 		
 		<section id="about">
 			<h2>About Me</h2>
 			<p>Hi! I'm <b>Sheetal</b>! I love making <b>art</b> and <b>software</b>. I manage <b>Sayapatri Arts & Events</b>, where I organize art workshops and events, blending creativity and technology. Here you’ll find my works in arts, crafts, and technology. Let’s create something <b>beautiful</b> together!</p>
 		</section>
-		
-		<section id="arts">
+		<section id="arts"></section>
 			<h2>My Arts</h2>
 			<div class="content">
 				<div class="flip-container" onclick="flipImage(this)">
@@ -185,6 +346,10 @@
 			</div>
 		</section>
 		
+		
+		
+		
+		
 		<section id="events">
 			<h2>Events</h2>
 			<div class="content">
@@ -200,10 +365,73 @@
 		</section>
 		
 		<section id="tech">
+			<div id="cms-demo">
+				<h2>CMS Project Demo</h2>
+				
+				<!-- CMS Dashboard Simulation -->
+				<div class="cms-dashboard">
+					<h3>CMS Dashboard Simulation</h3>
+					<p>This is a simulation of how I would manage content in a CMS environment, such as Adobe Experience Manager:</p>
+			
+					<!-- Content Creation Tools -->
+					<div class="cms-tools">
+						<h4>Content Creation Tools</h4>
+						<button class="cms-button">Add New Page</button>
+						<button class="cms-button">Edit Template</button>
+						<button class="cms-button">Manage Assets</button>
+					</div>
+				</div>
+			
+				<!-- Demo for Adding a New Page -->
+				<div class="cms-page-demo">
+					<h4>Add New Page Demo</h4>
+					<p>In this demo, I simulate adding a new page to the CMS using drag-and-drop components:</p>
+					<div class="cms-component">
+						<div class="component-header">Hero Banner Component</div>
+						<img src="hero-banner.jpg" alt="Hero Banner Example" class="cms-image">
+						<p>Description: This component allows users to add dynamic banners with images, headlines, and call-to-action buttons.</p>
+					</div>
+			
+					<div class="cms-component">
+						<div class="component-header">Text Component</div>
+						<p>Description: Easily edit text using a rich text editor. Adjust fonts, sizes, and colors with user-friendly controls.</p>
+					</div>
+			
+					<div class="cms-component">
+						<div class="component-header">Image Gallery Component</div>
+						<img src="image-gallery.jpg" alt="Image Gallery Example" class="cms-image">
+						<p>Description: Add an image gallery to showcase a set of pictures, customizable for different layouts and styles.</p>
+					</div>
+				</div>
+			
+				<!-- Demo for Editing Templates -->
+				<div class="cms-template-demo">
+					<h4>Edit Template Demo</h4>
+					<p>Here’s an example of how I would edit a template within a CMS:</p>
+					<ul>
+						<li>Modify the header and footer to match brand guidelines.</li>
+						<li>Use reusable components for quick page creation.</li>
+						<li>Ensure the layout is responsive and mobile-friendly.</li>
+					</ul>
+				</div>
+			
+				<!-- Demo for Managing Assets -->
+				<div class="cms-assets-demo">
+					<h4>Asset Management Demo</h4>
+					<p>In this section, I demonstrate how I manage digital assets in a CMS like Adobe Experience Manager:</p>
+					<ul>
+						<li>Upload new assets (images, videos, PDFs) to the media library.</li>
+						<li>Organize assets into folders and assign tags for easy retrieval.</li>
+						<li>Optimize images for faster loading times and better SEO.</li>
+					</ul>
+				</div>
+			</div>
 			<h2>Tech Profile</h2>
 			<p>Download my <a href="resume.pdf" target="_blank">Resume</a></p>
 			<p>As a developer, I’ve worked with modern frameworks such as Aurelia, React, and Angular. I focus on building user-friendly and efficient applications, blending my artistic approach into tech to deliver unique, interactive experiences.</p>
 		</section>
+		</div>
+		</div>
 		
 		<footer>
 			<p>Contact me at: <a href="mailto:your-email@example.com">your-email@example.com</a></p>
