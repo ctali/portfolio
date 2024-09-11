@@ -12,7 +12,87 @@
         	element.classList.toggle('flipped');
     }
 	</script>
+	<script>
+		function toggleMenu() {
+			const overlay = document.getElementById("overlay-menu");
+			if (overlay.style.width === "100%") {
+				overlay.style.width = "0";
+			} else {
+				overlay.style.width = "100%";
+			}
+		}
+	</script>
+	
+	
 	<style>
+		/* Hamburger Icon */
+.hamburger {
+    font-size: 30px;
+    cursor: pointer;
+    position: absolute;
+    left: 20px;
+    top: 20px;
+    display: none; /* Hidden by default */
+}
+
+/* Overlay Menu */
+.overlay {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: #850014; /* Dark background */
+    overflow-x: hidden;
+    transition: 0.5s;
+    z-index: 1000; /* On top of everything */
+}
+
+.overlay-content {
+    position: relative;
+    top: 25%;
+    width: 100%;
+    text-align: center;
+    margin-top: 30px;
+}
+
+.overlay-content a {
+    padding: 8px;
+    text-decoration: none;
+    font-size: 36px;
+    color: #fff;
+    display: block;
+    transition: 0.3s;
+}
+
+.overlay-content a:hover {
+    color: #3bbba3;
+}
+
+.closebtn {
+    position: absolute;
+    top: 20px;
+    right: 45px;
+    font-size: 60px;
+}
+
+/* Hide sidebar on small screens */
+@media (max-width: 768px) {
+    .sidebar {
+        display: none;
+    }
+
+    .hamburger {
+        display: block; /* Show hamburger on small screens */
+    }
+
+    .main-content {
+        margin-left: 0; /* No sidebar margin on small screens */
+    }
+}
+
+
+
 		/* Google font for cursive and clean minimalist fonts */
 		@import url('https://fonts.googleapis.com/css2?family=Dancing+Script&family=Open+Sans:wght@300;400;600&display=swap');
 		
@@ -305,6 +385,7 @@ section {
 </head>
 <body>
 	<header>
+		<span class="hamburger" onclick="toggleMenu()">&#9776;</span>
 		Sheetal's Portfolio
 	</header>
 	
@@ -318,6 +399,16 @@ section {
 					<li><a href="#tech">Tech Profile</a></li>
 				</ul>
 			</nav>		
+			<div id="overlay-menu" class="overlay">
+				<a href="javascript:void(0)" class="closebtn" onclick="toggleMenu()">&times;</a>
+				<div class="overlay-content">
+					<a href="#about" onclick="toggleMenu()">About Me</a>
+					<a href="#arts" onclick="toggleMenu()">My Arts</a>
+					<a href="#events" onclick="toggleMenu()">Events</a>
+					<a href="#tech" onclick="toggleMenu()">Tech Profile</a>
+					<a href="#cms-demo" onclick="toggleMenu()">CMS Demo</a>
+				</div>
+				</div>
 		
 		<div class="main-content">
 		
