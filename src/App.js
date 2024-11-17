@@ -1,5 +1,8 @@
+import React from 'react';
 import logo from './logo.svg';
 import './App.css';
+// import images from './assets/importImages';
+
 
 function App() {
   return (

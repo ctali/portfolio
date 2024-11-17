@@ -1,0 +1,21 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "type": "pwa-node",
+      "request": "launch",
+      "name": "Launch React App",
+      "program": "${workspaceFolder}/node_modules/react-scripts/scripts/start.js",
+      "cwd": "${workspaceFolder}",
+      "console": "integratedTerminal",
+      "internalConsoleOptions": "neverOpen"
+    },
+    {
+      "type": "pwa-chrome",
+      "request": "launch",
+      "name": "Debug with Chrome",
+      "url": "http://localhost:3000",
+      "webRoot": "${workspaceFolder}/src"
+    }
+  ]
+}
